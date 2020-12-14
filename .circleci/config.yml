@@ -7,14 +7,9 @@ jobs:
       - checkout
       # These two tests should run in parallel. Make it so!
       - run:
-          name: Run Hello test
-          command: |
-            bash src/test_hello.sh
-      - run:
-          name: Run Goodbye test
-          command: |
-            bash src/test_goodbye.sh
-
+         command: |
+            echo $(circleci tests glob "src/test_hello.sh" "src/test_goodbye.sh")
+            circleci tests glob "src/test_hello.sh" "src/test_goodbye.sh" | xargs -n 1 echo
 workflows:
   version: 2
   test:
