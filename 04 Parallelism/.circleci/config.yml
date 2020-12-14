@@ -6,14 +6,14 @@ jobs:
     steps:
       - checkout
       # These two tests should run in parallel. Make it so!
-      - run:
-          name: Run Hello test
-          command: |
-            bash src/test_hello.sh
-      - run:
-          name: Run Goodbye test
-          command: |
-            bash src/test_goodbye.sh
+      # - run:
+      #     name: Run Hello test
+      #     command: |
+      #       bash src/test_hello.sh
+      # - run:
+      #     name: Run Goodbye test
+      #     command: |
+      #       bash src/test_goodbye.sh
 
 workflows:
   version: 2
